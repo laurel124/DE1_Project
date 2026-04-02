@@ -1,1 +1,1 @@
-# DE1_Project
+# 7. Uloha DE_1 Pong
