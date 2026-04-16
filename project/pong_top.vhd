@@ -4,11 +4,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity pong_top is
     Port (
         clk          : in  STD_LOGIC;
-        rst          : in  STD_LOGIC;
         btnu         : in  STD_LOGIC;
         btnl         : in  STD_LOGIC;
         btnd         : in  STD_LOGIC;
         btnr         : in  STD_LOGIC;
+        rst         : in  STD_LOGIC;
         spi_data_out : out STD_LOGIC;
         spi_clk_out  : out STD_LOGIC;
         spi_cs_1     : out STD_LOGIC;
