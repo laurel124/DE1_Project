@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; -- Přidáno pro matematické přičtení adresy
 
 entity spi_top is
     Port (
@@ -79,10 +80,16 @@ architecture Behavioral of spi_top is
     signal s_spi_addres  : std_logic;
     signal s_spi_data_in : std_logic_vector(15 downto 0);
 
+    signal s_matrix_addr_4bit : std_logic_vector(3 downto 0); -- Přidán 4bitový vektor adresy
+
 begin
 
     -- Výstup řádku pro externí logiku/paměť
     matrix_addr_out <= s_row_addr;
+    
+    -- MAX7219 používá pro řádky adresy 1 až 8 (adresa 0 je No-Op!)
+    -- Proto vezmeme 3-bitový čítač (0-7), uděláme z něj 4-bitové číslo a přičteme 1
+    s_matrix_addr_4bit <= std_logic_vector(unsigned("0" & s_row_addr) + 1);
 
     -- Tímto zajistíme, že čítač se zvedne PŘESNĚ o 1. 
     -- Povolení se uplatní jen při společném hodinovém taktu (s_ce).
@@ -156,14 +163,15 @@ begin
                 next_state <= START_SPI_1;
 
             when START_SPI_1 =>
-                s_spi_data_in <= matrix_data_in(15 downto 8) & s_row_addr & "00000";
+                -- SPRÁVNÉ POŘADÍ BÍTŮ PRO MAX7219: 4 nuly & 4 bity adresy & 8 bitů dat
+                s_spi_data_in <= "0000" & s_matrix_addr_4bit & matrix_data_in(15 downto 8);
                 s_spi_addres  <= '0'; -- Výběr CS1
                 s_spi_start   <= '1';
                 next_state    <= WAIT_SPI_1;
 
             when WAIT_SPI_1 =>
-                -- OPRAVA 1: Ve fázi čekání držíme data i adresu nastavenou na CS1
-                s_spi_data_in <= matrix_data_in(15 downto 8) & s_row_addr & "00000";
+                -- Ve fázi čekání držíme data i adresu nastavenou na CS1
+                s_spi_data_in <= "0000" & s_matrix_addr_4bit & matrix_data_in(15 downto 8);
                 s_spi_addres  <= '0'; 
                 
                 if s_spi_comp = '1' then
@@ -171,14 +179,15 @@ begin
                 end if;
 
             when START_SPI_2 =>
-                s_spi_data_in <= matrix_data_in(7 downto 0) & s_row_addr & "00000";
+                -- SPRÁVNÉ POŘADÍ BÍTŮ PRO MAX7219: 4 nuly & 4 bity adresy & 8 bitů dat
+                s_spi_data_in <= "0000" & s_matrix_addr_4bit & matrix_data_in(7 downto 0);
                 s_spi_addres  <= '1'; -- Výběr CS2
                 s_spi_start   <= '1';
                 next_state    <= WAIT_SPI_2;
 
             when WAIT_SPI_2 =>
-                -- OPRAVA 1 (pokračování): Ve fázi čekání držíme data i adresu na CS2
-                s_spi_data_in <= matrix_data_in(7 downto 0) & s_row_addr & "00000";
+                -- Ve fázi čekání držíme data i adresu na CS2
+                s_spi_data_in <= "0000" & s_matrix_addr_4bit & matrix_data_in(7 downto 0);
                 s_spi_addres  <= '1'; 
                 
                 if s_spi_comp = '1' then

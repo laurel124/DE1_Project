@@ -58,7 +58,7 @@ begin
                         if spi_start = '1' then
                             current_state <= SHIFT_LOW;
                             shift_reg     <= data_in;       
-                            current_bit_index <= 0; -- Posíláme od nultého bitu nahoru
+                            current_bit_index <= 15; -- Posíláme od nultého bitu nahoru
                         end if;
 
                     when SHIFT_LOW =>
@@ -79,10 +79,10 @@ begin
                         -- Fáze 2: Hodiny jdou nahoru (zde si přijímač přečte bit)
                         spi_clk_out <= '1';
                         
-                        if current_bit_index = 15 then
+                        if current_bit_index = 0 then
                             current_state <= DONE;
                         else
-                            current_bit_index <= current_bit_index + 1;
+                            current_bit_index <= current_bit_index - 1;
                             current_state <= SHIFT_LOW;
                         end if;
                         
