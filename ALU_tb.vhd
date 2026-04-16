@@ -22,7 +22,7 @@ architecture tb of tb_ALU is
     signal ball_x     : std_logic_vector (3 downto 0);
     signal ball_y     : std_logic_vector (2 downto 0);
 
-    constant TbPeriod : time := 1000 ns; -- ***EDIT*** Put right period here
+    constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
