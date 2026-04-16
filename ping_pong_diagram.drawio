@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.4 Thinking">
   <diagram id="pong-pretty" name="Page-1">
-    <mxGraphModel dx="4282" dy="1254" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="3270" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -26,7 +26,7 @@
           <mxGeometry height="280" width="325" x="1922.5" y="307" as="geometry" />
         </mxCell>
         <mxCell id="disp" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;strokeColor=#d9d9d9;strokeWidth=2;fillColor=#0b0b0b;fontSize=18;fontStyle=1;fontColor=#ffffff;" value="LED MATRIX" vertex="1">
-          <mxGeometry height="135" width="320" x="1922.5" y="100" as="geometry" />
+          <mxGeometry height="135" width="320" x="1925" y="100" as="geometry" />
         </mxCell>
         <mxCell id="note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#d9d9d9;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacingTop=10;spacingLeft=12;fontColor=#ffffff;" value="BTN mapping&#xa;Player 1: btnl = up, btnd = down&#xa;Player 2: btnu = up, btnr = down" vertex="1">
           <mxGeometry height="110" width="360" x="-160" y="535" as="geometry" />
@@ -261,7 +261,7 @@
             <mxPoint x="1922.5" y="363" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e27" edge="1" parent="1" source="drv" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#ffffff;strokeWidth=2;endArrow=classic;endFill=1;" target="disp" value="">
+        <mxCell id="e27" edge="1" parent="1" source="drv" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2;endArrow=classic;endFill=1;" target="disp" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="hS8c-5T1JtZ23mwxDObw-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="clk_debounce" vertex="1">
