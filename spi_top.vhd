@@ -22,7 +22,7 @@ end spi_top;
 architecture Behavioral of spi_top is
 
     -- =======================================================================
-    -- DEKLARACE KOMPONENT (Školní styl)
+    -- DEKLARACE KOMPONENT
     -- =======================================================================
     
     component clk_en is
@@ -72,6 +72,7 @@ architecture Behavioral of spi_top is
     signal s_ce          : std_logic;
     signal s_row_addr    : std_logic_vector(2 downto 0);
     signal s_cnt_en      : std_logic;
+    signal s_cnt_en_pulse: std_logic; -- Přidán signál pro korektní čítání
     
     signal s_spi_start   : std_logic;
     signal s_spi_comp    : std_logic;
@@ -83,11 +84,15 @@ begin
     -- Výstup řádku pro externí logiku/paměť
     matrix_addr_out <= s_row_addr;
 
+    -- Tímto zajistíme, že čítač se zvedne PŘESNĚ o 1. 
+    -- Povolení se uplatní jen při společném hodinovém taktu (s_ce).
+    s_cnt_en_pulse <= s_cnt_en and s_ce;
+
     -- =======================================================================
     -- INSTANCOVÁNÍ PODŘÍZENÝCH MODULŮ
     -- =======================================================================
     inst_clk_en : clk_en
-        generic map (G_MAX => 5) -- Zvolte vhodné číslo pro rychlost SPI
+        generic map (G_MAX => 5) 
         port map (
             clk => clk,
             rst => rst,
@@ -99,7 +104,7 @@ begin
         port map (
             clk => clk,
             rst => rst,
-            en  => s_cnt_en,
+            en  => s_cnt_en_pulse, -- Použití našeho 1-taktového pulzu!
             cnt => s_row_addr
         );
 
@@ -107,12 +112,12 @@ begin
         port map (
             clk          => clk,
             rst          => rst,
-            ce           => s_ce,         -- Posíláme clock enable do SPI
-            addres       => s_spi_addres, -- Řadič si vybírá matici
+            ce           => s_ce,
+            addres       => s_spi_addres,
             spi_start    => s_spi_start,
             data_in      => s_spi_data_in,
             data_out     => spi_data_out,
-            spi_clk_out  => spi_clk_out,  -- Vyvedení SPI hodin ven
+            spi_clk_out  => spi_clk_out,
             cs_1         => spi_cs_1,
             cs_2         => spi_cs_2,
             spi_complete => s_spi_comp
@@ -122,8 +127,6 @@ begin
     -- HLAVNÍ STAVOVÝ AUTOMAT (FSM)
     -- =======================================================================
     
-    -- Sekvenční blok: Aktualizuje stav pouze, když přijde "tik" (s_ce)
-    -- Tím je zaručeno perfektní načasování mezi FSM a SPI modulem.
     p_fsm_seq : process(clk)
     begin
         if rising_edge(clk) then
@@ -135,47 +138,52 @@ begin
         end if;
     end process;
 
-    -- Kombinační blok: Rozhoduje o akcích
     p_fsm_comb : process(current_state, s_spi_comp, s_row_addr, matrix_data_in)
     begin
-        -- Výchozí hodnoty
+        -- Výchozí hodnoty (data_in a addres už nenulujeme, musíme je držet!)
         next_state    <= current_state; 
         s_spi_start   <= '0';
         s_cnt_en      <= '0';
-        s_spi_addres  <= '0';
+        
+        -- Důležité: Výchozí hodnoty zachovávají bezpečný stav, ale v logice 
+        -- je specifikujeme plně pro každý stav.
+        s_spi_addres  <= '0'; 
         s_spi_data_in <= (others => '0');
 
         case current_state is
 
             when SET_MATRIX =>
-                -- Adresa už je nastavena, v dalším "tiku" rovnou spouštíme Matici 1
                 next_state <= START_SPI_1;
 
             when START_SPI_1 =>
-                -- Skládáme slovo pro 1. matici: Horních 8 bitů + adresa + nuly
                 s_spi_data_in <= matrix_data_in(15 downto 8) & s_row_addr & "00000";
                 s_spi_addres  <= '0'; -- Výběr CS1
                 s_spi_start   <= '1';
                 next_state    <= WAIT_SPI_1;
 
             when WAIT_SPI_1 =>
-                -- Čekáme, dokud modul SPI nedokončí odesílání
+                -- OPRAVA 1: Ve fázi čekání držíme data i adresu nastavenou na CS1
+                s_spi_data_in <= matrix_data_in(15 downto 8) & s_row_addr & "00000";
+                s_spi_addres  <= '0'; 
+                
                 if s_spi_comp = '1' then
                     next_state <= START_SPI_2;
                 end if;
 
             when START_SPI_2 =>
-                -- Skládáme slovo pro 2. matici: Spodních 8 bitů + adresa + nuly
                 s_spi_data_in <= matrix_data_in(7 downto 0) & s_row_addr & "00000";
                 s_spi_addres  <= '1'; -- Výběr CS2
                 s_spi_start   <= '1';
                 next_state    <= WAIT_SPI_2;
 
             when WAIT_SPI_2 =>
-                -- Čekáme na dokončení 2. matice
+                -- OPRAVA 1 (pokračování): Ve fázi čekání držíme data i adresu na CS2
+                s_spi_data_in <= matrix_data_in(7 downto 0) & s_row_addr & "00000";
+                s_spi_addres  <= '1'; 
+                
                 if s_spi_comp = '1' then
-                    s_cnt_en   <= '1';         -- Odeslat povel čítači na další řádek (+1)
-                    next_state <= SET_MATRIX;  -- Opakovat cyklus
+                    s_cnt_en   <= '1';         -- Požadavek na posun řádku
+                    next_state <= SET_MATRIX;
                 end if;
 
             when others =>
