@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.4 Thinking">
   <diagram id="pong-pretty" name="Page-1">
-    <mxGraphModel dx="3270" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="3045" dy="597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -346,11 +346,10 @@
         <mxCell id="hS8c-5T1JtZ23mwxDObw-26" edge="1" parent="1" source="lbl_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2;endArrow=classic;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="845" y="259" />
-              <mxPoint x="845" y="260" />
+              <mxPoint x="100" y="259" />
+              <mxPoint x="100" y="260" />
               <mxPoint x="920" y="260" />
               <mxPoint x="920" y="380" />
-              <mxPoint x="950" y="380" />
             </Array>
             <mxPoint x="845" y="353" as="sourcePoint" />
             <mxPoint x="950" y="380" as="targetPoint" />
