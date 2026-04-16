@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.4 Thinking">
   <diagram id="pong-pretty" name="Page-1">
-    <mxGraphModel dx="2622" dy="815" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="2517" dy="693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -121,19 +121,19 @@
         <mxCell id="spi_in1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="clk" vertex="1">
           <mxGeometry height="22" width="85" x="1730" y="358" as="geometry" />
         </mxCell>
-        <mxCell id="spi_in2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="data_in" vertex="1">
+        <mxCell id="spi_in2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="matrix_data_in&amp;nbsp;&amp;nbsp;" vertex="1">
           <mxGeometry height="22" width="85" x="1730" y="406" as="geometry" />
         </mxCell>
-        <mxCell id="spi_out1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="data_out" vertex="1">
-          <mxGeometry height="22" width="75" x="1925" y="345" as="geometry" />
+        <mxCell id="spi_out1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="spi_data_out" vertex="1">
+          <mxGeometry height="22" width="75" x="1935" y="352" as="geometry" />
         </mxCell>
         <mxCell id="spi_out2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="spi_clk_out" vertex="1">
-          <mxGeometry height="22" width="75" x="1925" y="375" as="geometry" />
+          <mxGeometry height="22" width="75" x="1935" y="374" as="geometry" />
         </mxCell>
-        <mxCell id="spi_out3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="cs_1" vertex="1">
+        <mxCell id="spi_out3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="spi_cs_1" vertex="1">
           <mxGeometry height="22" width="75" x="1935" y="400" as="geometry" />
         </mxCell>
-        <mxCell id="spi_out4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="cs_2" vertex="1">
+        <mxCell id="spi_out4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="spi_cs_2" vertex="1">
           <mxGeometry height="22" width="75" x="1935" y="420" as="geometry" />
         </mxCell>
         <mxCell id="drv_in1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="DATA" vertex="1">
