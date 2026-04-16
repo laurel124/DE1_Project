@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.4 Thinking">
   <diagram id="pong-pretty" name="Page-1">
-    <mxGraphModel dx="3584" dy="848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="4748" dy="1442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -416,12 +416,6 @@
         </mxCell>
         <mxCell id="wanWt0c8Qu3d2GdcYPel-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="clk" vertex="1">
           <mxGeometry height="22" width="60" x="1310" y="338" as="geometry" />
-        </mxCell>
-        <mxCell id="wanWt0c8Qu3d2GdcYPel-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1340" y="250" as="sourcePoint" />
-            <mxPoint x="1390" y="200" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="wanWt0c8Qu3d2GdcYPel-4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#ffffff;strokeWidth=2;endArrow=classic;endFill=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="mat" value="">
           <mxGeometry relative="1" as="geometry">
