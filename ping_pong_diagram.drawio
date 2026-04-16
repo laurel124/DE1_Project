@@ -121,7 +121,7 @@
         <mxCell id="spi_in1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="clk" vertex="1">
           <mxGeometry height="22" width="85" x="1730" y="358" as="geometry" />
         </mxCell>
-        <mxCell id="spi_in2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="matrix_data_in&amp;nbsp;&amp;nbsp;" vertex="1">
+        <mxCell id="spi_in2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="matrix_data_in (15:0)&amp;nbsp;" vertex="1">
           <mxGeometry height="22" width="85" x="1730" y="406" as="geometry" />
         </mxCell>
         <mxCell id="spi_out1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="spi_data_out" vertex="1">
@@ -544,6 +544,9 @@
         </mxCell>
         <mxCell id="1p_KuxuANvcs0XHarjV0-9" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="rst" vertex="1">
           <mxGeometry height="22" width="85" x="1730" y="377" as="geometry" />
+        </mxCell>
+        <mxCell id="1p_KuxuANvcs0XHarjV0-10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="matrix_addr_out(2:0)" vertex="1">
+          <mxGeometry height="22" width="75" x="1935" y="458" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
