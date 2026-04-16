@@ -37,7 +37,7 @@ architecture Behavioral of ALU is
     constant SPEED : integer := 5; -- Upravit
 begin
 
-    process1 : process(clk)
+    process1 : process(clk)        
         variable next_x : integer;
         variable next_y : integer;
     begin
@@ -69,11 +69,17 @@ begin
                     -- 3. Logika pro X (pálky)
                     if next_x = 0 then
                         if bat1_array(b_y) = '1' then direction(1) <= '1'; next_x := 1;
-                        else next_x := 7; next_y := 3; score2 <= score2 + 1;
+                        else 
+                            next_x := 7; next_y := 3; 
+                            score2 <= score2 + 1;
+                            direction <= "10";
                         end if;
                     elsif next_x = 13 then
                         if bat2_array(b_y) = '1' then direction(1) <= '0'; next_x := 12;
-                        else next_x := 7; next_y := 3; score1 <= score1 + 1;
+                        else 
+                            next_x := 7; next_y := 3;
+                            score1 <= score1 + 1;
+                            direction <= "00";
                         end if;
                     elsif direction(1) = '1' then next_x := next_x + 1;
                     else next_x := next_x - 1;
@@ -88,7 +94,7 @@ begin
     end process;
 
     -- Převod vnitřních integerů na výstupní STD_LOGIC_VECTOR
-    ball_x <= std_logic_vector(to_unsigned(maximum(0, b_x), 4));
-    ball_y <= std_logic_vector(to_unsigned(maximum(0, b_y), 3));
+    ball_x <= std_logic_vector(to_unsigned(b_x, 4));
+    ball_y <= std_logic_vector(to_unsigned(b_y, 3));
 
 end Behavioral;
