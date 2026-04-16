@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.4 Thinking">
   <diagram id="pong-pretty" name="Page-1">
-    <mxGraphModel dx="3045" dy="597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="4282" dy="1254" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -30,9 +30,6 @@
         </mxCell>
         <mxCell id="note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#d9d9d9;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacingTop=10;spacingLeft=12;fontColor=#ffffff;" value="BTN mapping&#xa;Player 1: btnl = up, btnd = down&#xa;Player 2: btnu = up, btnr = down" vertex="1">
           <mxGeometry height="110" width="360" x="-160" y="535" as="geometry" />
-        </mxCell>
-        <mxCell id="note2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#d9d9d9;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacingTop=10;spacingLeft=12;fontColor=#ffffff;" value="Functional update reflected in diagram&#xa;• debounce cleans raw buttons&#xa;• buttons moves paddles only on move_en&#xa;• ALU moves ball only on game_tick&#xa;• matrix is treated as renderer / row formatter" vertex="1">
-          <mxGeometry height="120" width="470" x="-160" y="664" as="geometry" />
         </mxCell>
         <mxCell id="lbl_clk" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontColor=#ffffff;" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;clk&lt;/font&gt;" vertex="1">
           <mxGeometry height="24" width="60" x="30" y="253" as="geometry" />
