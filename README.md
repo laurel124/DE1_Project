@@ -39,6 +39,7 @@ Pokud hráč míček nezasáhne, tak automaticky restartuje hru.
 Ovládá pálky.
 Každý hráč může mačkáním tlačítek pohybovat pálkou nahoru a dolů.
 Polohu pálek dále zpracovává ALU a Matrix
+
 <img src="testBench_Buttons.png" alt="Project Screenshot" width="1280">
 
 
@@ -46,6 +47,7 @@ Polohu pálek dále zpracovává ALU a Matrix
 Pomocí pozice míčku od ALU a pozice pálek od Buttons virtuálně zobrazuje hrací pole.
 Přijímá číslo požadovaných sloupců od SPI a obratem mu je posílá.
 
+<img src="testBench_matrix.png" alt="Project Screenshot" width="1280">
 
 
 ### SPI
