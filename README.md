@@ -25,7 +25,7 @@ ja[4] - cs2 - výběr druhého LED driveru
 
 Program zpracovává tlačítka obou hráčů, řídí pohyb pálek a míčku a vytváří obraz hry pro LED matice.
 
-Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud hráč míček netrefí, bod získá protihráč.
+Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud hráč míček netrefí, bod získá protihráč a hra se restartuje.
 
 ## Popis komponent
 
