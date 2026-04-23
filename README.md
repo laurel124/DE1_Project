@@ -60,6 +60,9 @@ Ze vstupních dat vytvoří výstupní řetězec, který obsahuje číslo sloupc
 
 ### Hardware
 Deska Nexys A7-50T
+
 Tlačítka na desce
+
 2 externí LED displeje
+
 Deska Arduino na napájení
