@@ -19,8 +19,32 @@ clk_out - hodinový signál pro přenos dat
 cs1 - výběr prvního LED driveru  
 cs2 - výběr druhého LED driveru
 
-## Popis
+## Popis projektu
 
 Program zpracovává tlačítka obou hráčů, řídí pohyb pálek a míčku a vytváří obraz hry pro LED matice.
 
 Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud hráč míček netrefí, bod získá protihráč.
+
+## Popis komponent
+
+### ALU
+Počítá pohyb míčku po hrací ploše a určuje, jestli hráč zasáhl míček pálkou.
+Pokud hráč míček nezasáhne, tak automaticky restartuje hru.
+
+
+### Buttons
+Ovládá pálky.
+Každý hráč může mačkáním tlačítek pohybovat pálkou nahoru a dolů.
+Polohu pálek dále zpracovává ALU a Matrix
+
+
+### Matrix
+Pomocí pozice míčku od ALU a pozice pálek od Buttons virtuálně zobrazuje hrací pole.
+Přijímá číslo požadovaných sloupců od SPI a obratem mu je posílá.
+
+
+### SPI
+Obsluhuje externí displeje.
+Jako vstup má vektor rozsvícení LEDek.
+
+
