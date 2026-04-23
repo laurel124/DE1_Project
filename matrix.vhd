@@ -53,54 +53,55 @@ signal mat_table : MAT;
     
 begin
 
-    p_matrix : process(clk)
+   p_matrix : process(clk)
         variable tmp : MAT;
         variable x_idx : integer;
         variable y_idx : integer;
-        
-        begin
+        variable s_idx : integer; -- pomocná proměnná pro spi_Y
+    begin
         if rising_edge(clk) then
             if rst = '1' then
                 mat_table <= (others => (others => '0'));
-                spi_X <= x"0000";
-    
+                spi_X <= (others => '0');
             else
-                -- 1) zeroes
+                -- 1) Vynulování tmp
                 tmp := (others => (others => '0'));
-    
-                -- 2) left player (x = 0)  btn_P1
+
+                -- 2) Levý hráč
                 for i in 0 to 7 loop
-                    if btn_P1(i) = '1' then
-                        tmp(i)(0) := '1';
-                    end if;
+                    if btn_P1(i) = '1' then tmp(i)(0) := '1'; end if;
                 end loop;
-    
-                -- 3) right player (x = 15) btn_P2
+
+                -- 3) Pravý hráč
                 for i in 0 to 7 loop
-                    if btn_P2(i) = '1' then
-                        tmp(i)(15) := '1';
-                    end if;
+                    if btn_P2(i) = '1' then tmp(i)(15) := '1'; end if;
                 end loop;
-    
-                -- 4) ball alu_X and alu_Y
-                x_idx := to_integer(unsigned(alu_X));
+
+                -- 4) Míček
+                x_idx := to_integer(unsigned(alu_X)) + 1;
                 y_idx := to_integer(unsigned(alu_Y));
-    
-                -- 
-                x_idx := x_idx + 1;
-    
-                -- overflow protection
+
                 if (x_idx >= 0 and x_idx <= 15 and y_idx >= 0 and y_idx <= 7) then
                     tmp(y_idx)(x_idx) := '1';
                 end if;
-    
-                -- save to matrix
+
+                -- Uložení do signálu
                 mat_table <= tmp;
+
+                s_idx := to_integer(unsigned(spi_Y));
                 
-                --output selected row
-                spi_X <= mat_table(to_integer(unsigned(spi_Y)));
+                for i in 0 to 7 loop
+                    -- Prvních 8 bitů (15 downto 8) bude sloupec spi_Y
+                    spi_X(i + 8) <= tmp(i)(s_idx);
+                    
+                    -- Druhých 8 bitů (7 downto 0) bude sloupec spi_Y + 8
+                    spi_X(i)     <= tmp(i)(s_idx + 8);
+                end loop;
+
+ 
             end if;
         end if;
     end process;
+-- Ten původní řádek spi_X <= ... zde už nebude.
 
 end Behavioral;
