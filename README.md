@@ -2,7 +2,7 @@
 
 Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8.
 
-<img src="schema_final.png" alt="Project Screenshot" width="1000">
+<img src="schema_final.png" alt="Project Screenshot" width="1280">
 
 ## Vstupy
 
@@ -33,20 +33,24 @@ Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud h
 Počítá pohyb míčku po hrací ploše a určuje, jestli hráč zasáhl míček pálkou.
 Pokud hráč míček nezasáhne, tak automaticky restartuje hru.
 
+<img src="ALUtestBench.png" alt="Project Screenshot" width="1280">
 
 ### Buttons
 Ovládá pálky.
 Každý hráč může mačkáním tlačítek pohybovat pálkou nahoru a dolů.
 Polohu pálek dále zpracovává ALU a Matrix
+<img src="Screenshot 2026-04-09 164500.png" alt="Project Screenshot" width="1280">
 
 
 ### Matrix
 Pomocí pozice míčku od ALU a pozice pálek od Buttons virtuálně zobrazuje hrací pole.
 Přijímá číslo požadovaných sloupců od SPI a obratem mu je posílá.
+<img src="testBench_matrix.png" alt="Project Screenshot" width="1280">
 
 
 ### SPI
 Obsluhuje externí displeje.
 Jako vstup má vektor rozsvícení LEDek.
+<img src="Simulace componenty spi_top.png" alt="Project Screenshot" width="1280">
 
 
