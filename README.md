@@ -2,6 +2,8 @@
 
 Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8.
 
+<img src="schema_final.png" alt="Project Screenshot" width="400">
+
 ## Vstupy
 
 clk - systémový hodinový signál  
