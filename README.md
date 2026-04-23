@@ -47,7 +47,7 @@ Polohu pálek dále zpracovává ALU a Matrix
 Pomocí pozice míčku od ALU a pozice pálek od Buttons virtuálně zobrazuje hrací pole.
 Přijímá číslo požadovaných sloupců od SPI a obratem mu je posílá.
 
-<img src="testBench_matrix.png" alt="Project Screenshot" width="1280">
+<img src="testBenchMatrix.png" alt="Project Screenshot" width="1280">
 
 
 ### SPI
