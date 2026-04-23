@@ -99,7 +99,7 @@ begin
     -- INSTANCOVÁNÍ PODŘÍZENÝCH MODULŮ
     -- =======================================================================
     inst_clk_en : clk_en
-        generic map (G_MAX => 5) 
+        generic map (G_MAX => 100) 
         port map (
             clk => clk,
             rst => rst,
