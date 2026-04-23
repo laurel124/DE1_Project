@@ -33,13 +33,13 @@ Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud h
 Počítá pohyb míčku po hrací ploše a určuje, jestli hráč zasáhl míček pálkou.
 Pokud hráč míček nezasáhne, tak automaticky restartuje hru.
 
-<img src="ALUtestBench.png" alt="Project Screenshot" width="1280">
+<img src="testBench_ALU.png" alt="Project Screenshot" width="1280">
 
 ### Buttons
 Ovládá pálky.
 Každý hráč může mačkáním tlačítek pohybovat pálkou nahoru a dolů.
 Polohu pálek dále zpracovává ALU a Matrix
-<img src="Screenshot 2026-04-09 164500.png" alt="Project Screenshot" width="1280">
+<img src="testBench_Buttons.png" alt="Project Screenshot" width="1280">
 
 
 ### Matrix
