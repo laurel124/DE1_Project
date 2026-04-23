@@ -28,6 +28,8 @@ Program zpracovává tlačítka obou hráčů, řídí pohyb pálek a míčku a 
 
 Míček se pohybuje po hrací ploše, odráží se od stěn a od pálky. Pokud hráč míček netrefí, bod získá protihráč a hra se restartuje.
 
+Displeje potřebují napájení 5 V a deska pracuje s 3,3 V. Proto potřebujeme externí napájení pomocí desky Arduino a transformátor napěťových úrovní signálů.
+
 ## Popis komponent
 
 ### ALU
