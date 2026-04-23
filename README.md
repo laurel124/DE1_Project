@@ -51,6 +51,9 @@ Přijímá číslo požadovaných sloupců od SPI a obratem mu je posílá.
 ### SPI
 Obsluhuje externí displeje.
 Jako vstup má vektor rozsvícení LEDek.
+Displeje se ovládají pomocí obvodu MAX7219.
+Ze vstupních dat vytvoří výstupní řetězec, který obsahuje číslo sloupce a které LEDky jsou rozsvícené/zhasnuté.
+
 <img src="Simulace componenty spi_top.png" alt="Project Screenshot" width="1280">
 
 
