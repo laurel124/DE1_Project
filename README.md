@@ -56,4 +56,8 @@ Ze vstupních dat vytvoří výstupní řetězec, který obsahuje číslo sloupc
 
 <img src="Simulace componenty spi_top.png" alt="Project Screenshot" width="1280">
 
-
+### Hardware
+Deska Nexys A7-50T
+Tlačítka na desce
+2 externí LED displeje
+Deska Arduino na napájení
