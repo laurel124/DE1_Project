@@ -3,6 +3,7 @@
 Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8.
 
 <img src="schema_final2.png" alt="Project Screenshot" width="1280">
+<img src="externiDiagram.png" alt="Project Screenshot" width="1280">
 
 ## Vstupy
 
