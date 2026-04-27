@@ -1,6 +1,6 @@
 # 7. Uloha DE_1 Pong
 
-Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8.
+Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8. Hráči ovládají tlačítky své pálky a snaží se prostřelit protihráče.
 
 <img src="schema_final.png" alt="Project Screenshot" width="1280">
 <img src="externiDiagram.png" alt="Project Screenshot" width="1280">
