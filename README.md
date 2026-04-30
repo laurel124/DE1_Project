@@ -41,7 +41,7 @@ Displeje potřebují napájení 5 V a deska pracuje s 3,3 V. Proto potřebujeme 
 Počítá pohyb míčku po hrací ploše a určuje, jestli hráč zasáhl míček pálkou.
 Pokud hráč míček nezasáhne, tak automaticky restartuje hru.
 
-<img src="testBench_ALU.png" alt="Project Screenshot" width="1280">
+<img src="testBench_ALU.jpg" alt="Project Screenshot" width="1280">
 
 ### Buttons
 Ovládá pálky.
