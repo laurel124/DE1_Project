@@ -2,7 +2,12 @@
 
 Hra je zobrazena na 2 LED maticích 8×8, které spolu tvoří hrací plochu 16×8. Hráči ovládají tlačítky své pálky a snaží se prostřelit protihráče.
 
+### Schéma programu
+
 <img src="schema_final.png" alt="Project Screenshot" width="1280">
+
+### Schéma zapojení
+
 <img src="externiDiagram.png" alt="Project Screenshot" width="1280">
 
 ## Vstupy
